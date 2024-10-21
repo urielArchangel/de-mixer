@@ -1,0 +1,58 @@
+{
+  "name": "de-mixer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "browser": {
+    "web-worker": "web-worker/browser"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.1.7",
+    "@tanstack/react-query": "^5.59.8",
+    "@types/snarkjs": "^0.7.8",
+    "@uniswap/sdk": "^3.0.3",
+    "@uniswap/sdk-core": "^5.8.5",
+    "@uniswap/v3-sdk": "^3.18.1",
+    "@wagmi/core": "^2.13.8",
+    "antd": "^5.21.3",
+    "axios": "^1.7.7",
+    "bignumber.js": "^9.1.2",
+    "bottleneck": "^2.19.5",
+    "circom2": "^0.2.19",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "cryptocurrency-icons": "^0.18.1",
+    "encoding": "^0.1.13",
+    "ethers": "^6.13.4",
+    "lodash": "^4.17.21",
+    "next": "14.2.15",
+    "pino-pretty": "^11.2.2",
+    "qrcode": "^1.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.3.0",
+    "snarkjs": "^0.7.5",
+    "userland": "^0.4.3",
+    "viem": "^2.21.21",
+    "wagmi": "^2.12.17",
+    "web3": "^4.13.0",
+    "web3-validator": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/circomlibjs": "^0.1.6",
+    "@types/lodash": "^4.17.10",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

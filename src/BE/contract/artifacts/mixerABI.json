@@ -1,0 +1,482 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_verifier",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_uniswapRouter",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_WETH9",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_quoter",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "commitment",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "root",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nulifierHash",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MERKLE_TREE_DEPTH",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "WETH9",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "commitments",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentRoot",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_commitment",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_root",
+						"type": "uint256"
+					}
+				],
+				"name": "depositBase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_commitment",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_root",
+						"type": "uint256"
+					}
+				],
+				"name": "depositERC20",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint24",
+						"name": "poolFee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint256",
+						"name": "slippageTolerance",
+						"type": "uint256"
+					}
+				],
+				"name": "getAmountOutMinimum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCommitments",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRoots",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "nulifierHashs",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "quoter",
+				"outputs": [
+					{
+						"internalType": "contract IQuoter",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "roots",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "uniswapRouter",
+				"outputs": [
+					{
+						"internalType": "contract ISwapRouter",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "verifier",
+				"outputs": [
+					{
+						"internalType": "contract Groth16Verifier",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_pA",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[2][2]",
+						"name": "_pB",
+						"type": "uint256[2][2]"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_pC",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[1]",
+						"name": "pubSignals",
+						"type": "uint256[1]"
+					}
+				],
+				"name": "withdrawBase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "poolFee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minTokenOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_pA",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[2][2]",
+						"name": "_pB",
+						"type": "uint256[2][2]"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_pC",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256[1]",
+						"name": "pubSignals",
+						"type": "uint256[1]"
+					}
+				],
+				"name": "withdrawERC20",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mixer.sol": "Mixer"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x3f485fb1a44e8fbeadefb5da07d66edab3cfe809f0ac4074b1e54e3eb3c4cf69",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://095ce0626b41318c772b3ebf19d548282607f6a8f3d6c41c13edfbd5370c8652",
+				"dweb:/ipfs/QmVDZfJJ89UUCE1hMyzqpkZAtQ8jUsBgZNE5AMRG7RzRFS"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/interfaces/IQuoter.sol": {
+			"keccak256": "0x124b4334f058f70afd8f3b04315cc0812961d400957225d0875872b2a31afbff",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://efdc8133033a1596f60f3619a317f8b3af98a6adffd85a9898c5a809c5c22417",
+				"dweb:/ipfs/QmRkGjgzgSxhUVxwqiWZuz9M4Ff3TwTbzUgN3yJd4gxMfN"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+			"keccak256": "0x9bfaf1feb32814623e627ab70f2409760b15d95f1f9b058e2b3399a8bb732975",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a8a2c3e55965b61bcd91993d8e1d5d34b8b8a63e0fdfce87a85f6af92526fd53",
+				"dweb:/ipfs/QmQj2CSCSwqDSU4KMNWxGsN2336Cy64WgpV1X1EHXNZWxM"
+			]
+		},
+		"contracts/mixer.sol": {
+			"keccak256": "0xb279b434d6cc9305f7b2475579c5b36056153fd2a43b4e640bfe75fff417c494",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://623ae35635144bbd774acd0f48e7379e1ec7f8b0cf35e6683a0364c0ace65319",
+				"dweb:/ipfs/QmdsQ4zdCwkW9n5ignCTDxSRmw6FcXpqriWQYPsKY8wyPZ"
+			]
+		},
+		"contracts/verifier.sol": {
+			"keccak256": "0x48ee1f37ae87140f75987ceadfdf51dee6a62c426c0e0f9aadff58a2e2b33f18",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://839f41e29ae369e76525ccf4df0c8187fbe9939edf376be47889a14cbc8d192b",
+				"dweb:/ipfs/QmVxzoc5VeFcTzy7FXj8hfL5qUGVdgU8LkB9SzJVZdNQYm"
+			]
+		}
+	},
+	"version": 1
+}
